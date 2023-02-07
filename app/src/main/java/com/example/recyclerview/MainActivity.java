@@ -7,20 +7,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.res.Resources;
 import android.os.Bundle;
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewInterface{
     ArrayList<BratzModel> bratzModels = new ArrayList<>();
     int[] bratzImages = {R.drawable.jade, R.drawable.cloe,R.drawable.sasha, R.drawable.yasmin,R.drawable.kumi,R.drawable.nevra, R.drawable.meygan, R.drawable.raya, R.drawable.roxxi, R.drawable.pheobe, R.drawable.kiana};
 
-    private RecyclerView recyclerView;
+//    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.mRecyclerView);
+        //recyclerView = findViewById(R.id.mRecyclerView);
 
 
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -117,12 +118,17 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     }
     @Override
     public void onItemClick(int position) {
-
         Intent intent = new Intent(MainActivity.this, GalleryActivity.class);
-        intent.putExtra("bratz_image", bratzModels.get(position).getImage());
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bratzModels.get(position).getImage().compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        intent.putExtra("bratz_image", byteArray);
+//        intent.putExtra("bratz_image", bratzImages[position]);
+//        intent.putExtra("bratz_image", bratzModels.get(position).getImage());
         intent.putExtra("bratz_name", bratzModels.get(position).getBratzName());
         intent.putExtra("bratz_desc", bratzModels.get(position).getDescription());
 
-        startActivity(intent);
+        MainActivity.this.startActivity(intent);
     }
 }

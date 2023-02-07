@@ -1,4 +1,8 @@
 package com.example.recyclerview;
+//import android.graphics.Bitmap;
+//import android.graphics.BitmapFactory;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -16,20 +20,27 @@ public class GalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gallery);
         Log.d(TAG, "onCreate: started.");
 
-        this.getIncomingIntent();
+        getIncomingIntent();
     }
 
     private void getIncomingIntent(){
         Log.d(TAG, "getIncomingIntent: checking for incoming intents.");
         if(getIntent().hasExtra("bratz_image") && getIntent().hasExtra("bratz_name")){
             Log.d(TAG, "getIncomingIntent: found intent extras.");
-            int B_image = getIntent().getIntExtra("bratz_image",0);
+            //int B_image = getIntent().getIntExtra("bratz_image",0);
+
+            //int imageResource = getIntent().getIntExtra("bratz_image", 0);
+            //Bitmap B_image = BitmapFactory.decodeResource(getResources(), imageResource);
+
+            byte[] byteArray = getIntent().getByteArrayExtra("bratz_image");
+            Bitmap B_image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
             String B_name = getIntent().getStringExtra("bratz_name");
             String B_desc = getIntent().getStringExtra("bratz_desc");
             setImage(B_image,B_name, B_desc);
         }
     }
-    private void setImage(int B_image, String B_name, String B_desc){
+    private void setImage(Bitmap B_image, String B_name, String B_desc){
         Log.d(TAG, "setImage: setting the image and name to widgets.");
         TextView name = findViewById(R.id.descNameID);
         name.setText(B_name);

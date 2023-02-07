@@ -1,14 +1,12 @@
 package com.example.recyclerview;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -44,6 +42,7 @@ public class B_RecyclerViewAdapter extends RecyclerView.Adapter<B_RecyclerViewAd
         holder.tvChType.setText(bratzModels.get(position).getBratzCharacterType());
         // holder.imageView.setImageResource(bratzModels.get(position).getImage());
         holder.imageView.setImageBitmap(bratzModels.get(position).getImage());
+//      makes error:  holder.tvDescription.setText(bratzModels.get(position).getDescription());
 
 //        holder.itemView.setOnClickListener(view -> {
 //            Log.d(TAG, "onclick: clicked on:" + bratzModels.get(position).getBratzName());
@@ -107,8 +106,9 @@ public class B_RecyclerViewAdapter extends RecyclerView.Adapter<B_RecyclerViewAd
             tvName = itemView.findViewById(R.id.textView);
             tvNickname = itemView.findViewById(R.id.textView2);
             tvChType = itemView.findViewById(R.id.textView3);
+            //tvDescription = itemView.findViewById(R.id.descriptionID);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if(recyclerViewInterface != null)
