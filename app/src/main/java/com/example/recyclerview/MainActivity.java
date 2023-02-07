@@ -127,7 +127,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 //        intent.putExtra("bratz_image", bratzImages[position]);
 //        intent.putExtra("bratz_image", bratzModels.get(position).getImage());
         intent.putExtra("bratz_name", bratzModels.get(position).getBratzName());
-        intent.putExtra("bratz_desc", bratzModels.get(position).getDescription());
+//        intent.putExtra("bratz_desc", bratzModels.get(position).getDescription());
+        String[] bratzDescription = getResources().getStringArray(R.array.bratz_description_txt);
+        intent.putExtra("bratz_desc", bratzDescription[position]);
+
 
         MainActivity.this.startActivity(intent);
     }
