@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:weightSum="100"
+android:orientation="vertical">
+
+<!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageViewGallery"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:scaleType="fitCenter"
+        android:src="@drawable/jade" />
+
+    <TextView
+        android:id="@+id/descNameID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/hello_blank_fragment"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/descriptionID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/hello_blank_fragment"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+</LinearLayout>

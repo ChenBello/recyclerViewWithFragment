@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">recyclerView</string>
+    <string-array name="Bratz_txt">
+        <item>Jade</item>
+        <item>Cloe</item>
+        <item>Sasha</item>
+        <item>Yasmin</item>
+        <item>Kumi</item>
+        <item>Nevra</item>
+        <item>Meygan</item>
+        <item>Roxxi</item>
+        <item>Pheobe</item>
+        <item>Kiana</item>
+
+    </string-array>
+    <string-array name="bratz_nicknames_txt">
+        <item>Kool Kat</item>
+        <item>Angel</item>
+        <item>Bunny Boo</item>
+        <item>Pretty Princess</item>
+        <item>Lucky Bug</item>
+        <item>Queen B</item>
+        <item>Funky Fashion</item>
+        <item>Spice</item>
+        <item>Sugar</item>
+        <item>Outlaw Diva</item>
+
+
+    </string-array>
+    <string-array name="characters_txt">
+        <item>Main character</item>
+        <item>Main character</item>
+        <item>Main character</item>
+        <item>Main character</item>
+        <item>Secondary character</item>
+        <item>Secondary character</item>
+        <item>Secondary character</item>
+        <item>Secondary character</item>
+        <item>Secondary character</item>
+        <item>Minor character</item>
+    </string-array>
+
+    <string-array name="bratz_description_txt">
+        <item>Hey! My name is Jade</item>
+        <item>Hey! My name is Cloe</item>
+        <item>Hey! My name is Sasha</item>
+        <item>Hey! My name is Yasmin</item>
+        <item>Hey! My name is Kumi</item>
+        <item>Hey! My name is Nevra</item>
+        <item>Hey! My name is Meygan</item>
+        <item>Hey! My name is Roxxi</item>
+        <item>Hey! My name is Pheobe</item>
+        <item>Hey! My name is Kiana</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
